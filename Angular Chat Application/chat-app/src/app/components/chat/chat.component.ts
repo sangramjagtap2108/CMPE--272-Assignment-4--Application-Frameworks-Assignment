@@ -27,14 +27,23 @@ export class ChatComponent implements OnInit, OnDestroy, AfterViewChecked {
   currentMessage: string = '';
   messageList: Array<any> = [];
 
-  constructor() {}
+  constructor() {
+    // this.socket.on('Receive_Message', (data: any) => {
+    //   console.log('In receive message');
+    //   this.messageList.push(data);
+    //   console.log('List -', this.messageList);
+    // });
+  }
 
   ngOnInit() {
+    console.log('In ng init');
     // You can initialize the socket connection here if not passed from parent
 
     // Listen for incoming messages
-    this.socket.on('Receive_Message', (data: any) => {
+    this.socket.on('Receive Message', (data: any) => {
+      console.log('In receive message');
       this.messageList.push(data);
+      console.log('List -', this.messageList);
     });
   }
 
@@ -55,7 +64,7 @@ export class ChatComponent implements OnInit, OnDestroy, AfterViewChecked {
         time: currentTime.getHours() + ':' + currentTime.getMinutes(),
       };
       console.log('Message Data -', messageData);
-      this.socket.emit('Send_Message', messageData);
+      this.socket.emit('Send Message', messageData);
       this.messageList.push(messageData);
       this.currentMessage = '';
     }
@@ -68,6 +77,6 @@ export class ChatComponent implements OnInit, OnDestroy, AfterViewChecked {
 
   ngOnDestroy() {
     // Clean up any listeners to prevent memory leaks
-    this.socket.off('Receive_Message');
+    this.socket.off('Receive Message');
   }
 }

@@ -33,10 +33,12 @@ io.on("connection", (socket) => {
   });
 
   socket.on("Send Message", (messageData) => {
-    console.log(messageData);
+    // console.log(messageData);
     // to - To which room
     console.log("Receive");
     socket.to(messageData.group).emit("Receive Message", messageData);
+    console.log(messageData);
+    console.log("Receive msg emitted");
   });
 
   //   Disconnect from server, for ex. Closing a tab

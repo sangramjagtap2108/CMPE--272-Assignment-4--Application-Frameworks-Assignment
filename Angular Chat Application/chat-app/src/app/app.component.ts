@@ -25,8 +25,8 @@ export class AppComponent {
 
   joinRoom() {
     if (this.username && this.room) {
-      // console.log('In Join Room');
-      this.socket.emit('Join_Room', this.room);
+      console.log('In Join Room');
+      this.socket.emit('Join Study Group', this.room);
       this.showChat = true;
     }
   }
