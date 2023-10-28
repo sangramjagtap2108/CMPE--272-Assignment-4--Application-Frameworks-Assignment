@@ -1,0 +1,25 @@
+<div class="chat-window">
+    <div class="chat-header">
+      <p>Live Chat</p>
+    </div>
+    <div class="chat-body" #scrollContainer>
+      <div *ngFor="let messageContent of messageList" class="message" [ngClass]="{'you': username === messageContent.author, 'other': username !== messageContent.author}">
+        <div>
+          <div class="message-content">
+            <p>{{messageContent.message}}</p>
+          </div>
+          <div class="message-meta">
+            <p id="time">{{messageContent.time}}</p>
+            <p id="author">{{messageContent.author}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chat-footer">
+      <!-- <input type="text" [value]="currentMessage" placeholder="Hey..." (input)="currentMessage = ($event.target as HTMLInputElement).value"
+      (keydown.enter)="sendMessage()" /> -->
+      <input type="text" [value]="currentMessage" placeholder="Hey..." [(ngModel)]="currentMessage" (keydown.enter)="sendMessage()" />
+      <button (click)="sendMessage()">&#9658;</button>
+    </div>
+  </div>
+  
