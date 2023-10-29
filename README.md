@@ -33,7 +33,7 @@ cd Angular Chat Application Frontend
 ng serve -- port 3000
 ```
 
-Open your browser and navigate to http://localhost:4200/.
+Open your browser and navigate to http://localhost:3000/.
 
 * Backend:
 ```
