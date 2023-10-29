@@ -1,61 +1,36 @@
-<!-- <div class="chat-window">
-    <div class="chat-header">
-      <p>Live Chat</p>
-    </div>
-    <div class="chat-body" #scrollContainer>
-      <div *ngFor="let messageContent of messageList" class="message" [ngClass]="{'you': username === messageContent.author, 'other': username !== messageContent.author}">
+<div class="chat-window">
+  <div class="chat-header">
+    <p>Group Chat</p>
+  </div>
+  <div class="chat-body" #scrollContainer>
+    <div class="message-container">
+      <div
+        *ngFor="let messageContent of chatList"
+        [ngClass]="{
+          you: student === messageContent.student,
+          other: student !== messageContent.student
+        }"
+        class="message"
+      >
         <div>
           <div class="message-content">
-            <p>{{messageContent.message}}</p>
+            <p>{{ messageContent.message }}</p>
           </div>
           <div class="message-meta">
-            <p id="time">{{messageContent.time}}</p>
-            <p id="author">{{messageContent.author}}</p>
+            <p id="time">{{ messageContent.time }}</p>
+            <p id="student">{{ messageContent.student }}</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="chat-footer">
-      <input type="text" [value]="currentMessage" placeholder="Hey..." [(ngModel)]="currentMessage" (keydown.enter)="sendMessage()" />
-      <button (click)="sendMessage()">&#9658;</button>
-    </div>
   </div>
-   -->
-
-   <div class="chat-window">
-    <div class="chat-header">
-      <p>Group Chat</p>
-    </div>
-    <div class="chat-body" #scrollContainer>
-      <div class="message-container">
-        <div
-          *ngFor="let messageContent of chatList"
-          [ngClass]="{
-            you: student === messageContent.student,
-            other: student !== messageContent.student
-          }"
-          class="message"
-        >
-          <div>
-            <div class="message-content">
-              <p>{{ messageContent.message }}</p>
-            </div>
-            <div class="message-meta">
-              <p id="time">{{ messageContent.time }}</p>
-              <p id="student">{{ messageContent.student }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="chat-footer">
-      <input
-        type="text"
-        [(ngModel)]="currentMessage"
-        placeholder="Message"
-        (keydown.enter)="onMessageSent()"
-      />
-      <button (click)="onMessageSent()">&#9658;</button>
-    </div>
+  <div class="chat-footer">
+    <input
+      type="text"
+      [(ngModel)]="currentMessage"
+      placeholder="Message"
+      (keydown.enter)="onMessageSent()"
+    />
+    <button (click)="onMessageSent()">&#9658;</button>
   </div>
-  
+</div>

@@ -31,8 +31,6 @@ function App() {
             type="text"
             placeholder="Enter PIN"
             onChange={(event) => setStudyGroup(event.target.value)}
-            // onKeyDown event can be added anywhere
-            // For calling joinRoom on pressing Enter
             onKeyDown={(event) => {
               event.key === "Enter" && onJoinChat();
             }}

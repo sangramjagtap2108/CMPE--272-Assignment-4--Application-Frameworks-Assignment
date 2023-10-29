@@ -22,23 +22,16 @@ const io = new Server(server, {
 // Socket io works with events
 // Listening for connection event
 io.on("connection", (socket) => {
-  console.log(`User Connected - ${socket.id}`);
-
   //   Listening for Join Room event
   // data sent from client(socket.emit()) will be in room
   socket.on("Join Study Group", (group) => {
     // Socket io is preferred over http because it sends data from client to server without http request
     socket.join(group);
-    console.log(`Socket ${socket.id} joined group ${group}`);
   });
 
   socket.on("Send Message", (messageData) => {
-    // console.log(messageData);
     // to - To which room
-    console.log("Receive");
     socket.to(messageData.group).emit("Receive Message", messageData);
-    console.log(messageData);
-    console.log("Receive msg emitted");
   });
 
   //   Disconnect from server, for ex. Closing a tab

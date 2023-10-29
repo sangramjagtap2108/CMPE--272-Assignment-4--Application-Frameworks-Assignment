@@ -1,20 +1,3 @@
-<!-- <div class="App">
-  <ng-container *ngIf="!showChat">
-    <div class="joinChatContainer">
-      <h3>Join A chat</h3>
-      <input type="text" placeholder="John..." [(ngModel)]="username" />
-      <input
-        type="text"
-        placeholder="Room ID..."
-        [(ngModel)]="room"
-        (keydown.enter)="joinRoom()"
-      />
-      <button (click)="joinRoom()">Join A Room</button>
-    </div>
-  </ng-container>
-  <app-chat *ngIf="showChat" [socket]="socket" [username]="username" [room]="room"></app-chat>
-</div> -->
-
 <div class="Form">
   <div *ngIf="!displayGroupChat" class="joinChatContainer">
     <h1>Kahoot!</h1>
