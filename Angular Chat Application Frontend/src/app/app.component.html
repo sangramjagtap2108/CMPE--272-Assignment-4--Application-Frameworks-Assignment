@@ -1,4 +1,4 @@
-<div class="App">
+<!-- <div class="App">
   <ng-container *ngIf="!showChat">
     <div class="joinChatContainer">
       <h3>Join A chat</h3>
@@ -13,4 +13,25 @@
     </div>
   </ng-container>
   <app-chat *ngIf="showChat" [socket]="socket" [username]="username" [room]="room"></app-chat>
+</div> -->
+
+<div class="Form">
+  <div *ngIf="!displayGroupChat" class="joinChatContainer">
+    <h1>Kahoot!</h1>
+    <input type="text" placeholder="Student Name" [(ngModel)]="student" />
+    <input
+      type="text"
+      placeholder="Enter PIN"
+      [(ngModel)]="studyGroup"
+      (keydown.enter)="onJoinChat()"
+    />
+    <button (click)="onJoinChat()">Join Study Group</button>
+  </div>
+
+  <app-chat
+    *ngIf="displayGroupChat"
+    [socket]="socket"
+    [student]="student"
+    [studyGroup]="studyGroup"
+  ></app-chat>
 </div>
