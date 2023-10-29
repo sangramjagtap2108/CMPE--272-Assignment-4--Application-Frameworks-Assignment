@@ -29,7 +29,6 @@ Frontend:
 ```
 cd React Chat Application Frontend
 npm install
-
 ```
 
 ## 3. Steps to Execute
@@ -55,7 +54,6 @@ npm start
 * Frontend:
 
 ```
-Copy code
 cd React Chat Application Frontend
 npm start
 ```
