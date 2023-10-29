@@ -1,7 +1,7 @@
 # **CMPE-272 Assignment-4: Application Framework Assignment** : Chat Application Using Two Different Framework
 
 
-### Project Report - [Report](https://github.com/sangramjagtap2108/CMPE--272-Assignment-4--Application-Frameworks-Assignment/blob/main/Chat%20Application%20Report%20-%20Team%20SOAP.pdf)
+### Project Report - [Report pdf](https://github.com/sangramjagtap2108/CMPE--272-Assignment-4--Application-Frameworks-Assignment/blob/main/Chat%20Application%20Report%20-%20Team%20SOAP.pdf)
 ## 1. Overview
 * This repository contains a chat application developed using two popular frontend frameworks: Angular and React.
 * Both applications utilize a Node.js backend to manage real-time chat functionalities using Socket.io.
