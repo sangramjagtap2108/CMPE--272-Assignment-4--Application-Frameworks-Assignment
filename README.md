@@ -4,9 +4,6 @@
 * This repository contains a chat application developed using two popular frontend frameworks: Angular and React.
 * Both applications utilize a Node.js backend to manage real-time chat functionalities using Socket.io.
 
-## 2. 1. Overview
-This repository contains a chat application developed using two popular frontend frameworks: Angular and React. Both applications utilize a Node.js backend to manage real-time chat functionalities using Socket.io.
-
 ## 2. Steps for Setup (Installation)
 ### Angular + Node.js:
 * Frontend:
